@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap";
 
 import Navbar from './Components/Navbar';
 import FlagsFilter from './Components/FlagsFilter';
+import FlagsFavourite from './Components/FavFlags';
 
 
 
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <FlagsFilter></FlagsFilter>
+      <FlagsFavourite></FlagsFavourite>
       
     </div>
   );
