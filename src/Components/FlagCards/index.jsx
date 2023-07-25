@@ -1,6 +1,7 @@
 import React from 'react'
 
 import FlagCard from '../FlagCard'
+import FlagCardLoader from '../FlagCardLoader'
 const FlagCards = () => {
 
     const ob = {
@@ -16,7 +17,7 @@ const FlagCards = () => {
         <>
             <section className="col-12 col-md-9 card-section pb-1 rounded-2">
                 <div className={`row justify-content-center justify-content-md-between scrollable-element`} id="cardsContent">
-                    <FlagCard data={ob}></FlagCard>
+                    <FlagCardLoader></FlagCardLoader>
                 </div>
             </section>
         </>

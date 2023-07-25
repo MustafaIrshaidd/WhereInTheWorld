@@ -8,9 +8,7 @@ import FlagsFilter from './Components/FlagsFilter';
 import FlagsContainer from './Components/FlagsContainer';
 
 
-
 function App() {
-
   return (
     <>
       <Navbar></Navbar>
