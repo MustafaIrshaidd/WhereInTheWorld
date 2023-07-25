@@ -1,0 +1,39 @@
+/* Dropdown Filter */
+
+.dropdown {
+    background-color: var(--bg-White-element);
+}
+
+.btn {
+    background-color: transparent;
+    color: var(--color-DarkCoolGrey-info);
+    transition: none;
+}
+
+.btn::after {
+
+    position: absolute;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    width: 10px;
+    font-weight: 600;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    border: none;
+}
+
+.regions-dropdown--btns {
+    background-color: var(--bg-White-element);
+}
+
+.regions-dropdown--btns li button {
+    color: var(--color-DarkCoolGrey-info);
+    transition: linear;
+}
+
+.regions-dropdown--btns li button:hover {
+    background-color: var(--color-LoyalBlue) !important;
+    color: var(--bg-White-element);
+}

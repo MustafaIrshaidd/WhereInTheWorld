@@ -4,12 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 
 import Navbar from './Components/Navbar';
+import FlagsFilter from './Components/FlagsFilter';
+
 
 
 function App() {
+  
   return (
     <div className="App">
       <Navbar></Navbar>
+      <FlagsFilter></FlagsFilter>
+      
     </div>
   );
 }
