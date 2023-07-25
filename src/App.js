@@ -5,21 +5,20 @@ import "bootstrap/dist/js/bootstrap";
 
 import Navbar from './Components/Navbar';
 import FlagsFilter from './Components/FlagsFilter';
-import FlagsFavourite from './Components/FavFlags';
-import FlagCards from './Components/FlagCards';
+import FlagsContainer from './Components/FlagsContainer';
 
 
 
 function App() {
-  
-  return (
-    <div className="App">
-      <Navbar></Navbar>
-      <FlagsFilter></FlagsFilter>
 
-      <FlagCards></FlagCards>
-      
-    </div>
+  return (
+    <>
+      <Navbar></Navbar>
+      <main>
+        <FlagsFilter></FlagsFilter>
+        <FlagsContainer></FlagsContainer>
+      </main>
+    </>
   );
 }
 

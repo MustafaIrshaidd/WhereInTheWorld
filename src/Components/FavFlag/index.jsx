@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const FlagFavourite = ({imgSrc,countryName}) => {
+const FavFlag = ({imgSrc,countryName}) => {
   return (
     <>
       <div className={`${styles['flag-content']} me-1 rounded-2 d-flex justify-content-between align-items-center`}>
@@ -18,4 +18,4 @@ const FlagFavourite = ({imgSrc,countryName}) => {
   )
 }
 
-export default FlagFavourite
+export default FavFlag

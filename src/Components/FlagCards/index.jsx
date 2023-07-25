@@ -15,12 +15,10 @@ const FlagCards = () => {
     return (
         <>
             <section className="col-12 col-md-9 card-section pb-1 rounded-2">
-                <div className="row justify-content-center justify-content-md-between scrollable-element" id="cardsContent">
-                    {/* Cards Content */}
+                <div className={`row justify-content-center justify-content-md-between scrollable-element`} id="cardsContent">
                     <FlagCard data={ob}></FlagCard>
                 </div>
             </section>
-
         </>
     )
 }

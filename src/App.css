@@ -51,3 +51,37 @@ a {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
 }
 
+main {
+  background-color: var(--bg-WallPaperGrey);
+  min-height: 100vh;
+}
+
+/* Scollable */
+
+@media only screen and (min-width: 768px) {
+  /* custom scrollbar */
+
+  .scrollable-element {
+    max-height: calc(100vh - 280px);
+    overflow-y: scroll;
+  }
+
+  .scrollable-element::-webkit-scrollbar {
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+  }
+
+  .scrollable-element::-webkit-scrollbar-track {
+    background-color: var(--bg-White-element);
+    border: 1px solid rgba(201, 201, 201, 0.309);
+    margin-block: 0.1em;
+    margin-left: 10px;
+  }
+
+  .scrollable-element::-webkit-scrollbar-thumb {
+    display: inline-block;
+    background: var(--color-LightCoolGrey-info);
+    border-radius: 100vw;
+  }
+}
