@@ -1,0 +1,107 @@
+h5 {
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    color: var(--color-LoyalBlue);
+}
+
+.card-body--bg {
+    background-color: var(--bg-White-element);
+    border: none;
+}
+
+img {
+    height: 175px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: var(--bg-White-element);
+}
+
+li,
+h5 {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+li {
+    padding: 2px 0px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+li span {
+    color: var(--color-DarkCoolGrey-info);
+}
+
+@media only screen and (min-width: 903px) {
+    img {
+        height: 200px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    .card-hover--scale-down {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card-hover--scale-down:hover {
+        transform: scale(0.95);
+        box-shadow: none !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+
+    /* custom scrollbar */
+
+    .scrollable-element {
+        max-height: calc(100vh - 280px);
+        overflow-y: scroll;
+    }
+
+    .scrollable-element::-webkit-scrollbar {
+        display: block;
+        width: 0.5em;
+        height: 0.5em;
+    }
+
+    .scrollable-element::-webkit-scrollbar-track {
+        background-color: var(--bg-White-element);
+        border: 1px solid rgba(201, 201, 201, 0.309);
+        margin-block: 0.1em;
+        margin-left: 10px;
+    }
+
+    .scrollable-element::-webkit-scrollbar-thumb {
+        display: inline-block;
+        background: var(--color-LightCoolGrey-info);
+        border-radius: 100vw;
+    }
+
+    .color-favourite {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .color-favourite {
+        position: absolute;
+        bottom: 13px;
+        right: 28px;
+        font-size: 1.2rem;
+        color: var(--color-LightCoolGrey-info);
+    }
+
+    .color-favourite {
+        color: var(--color-favourite);
+    }
+}
