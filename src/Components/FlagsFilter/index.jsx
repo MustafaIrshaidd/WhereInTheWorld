@@ -1,9 +1,8 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-import SearchBar from '../SearchBar';
-import DropdownMenu from '../DropdownMenu';
-
+import SearchBar from '../forms/SearchBar';
+import DropdownMenu from '../forms/DropdownMenu';
 
 const FlagsFilter = () => {
 

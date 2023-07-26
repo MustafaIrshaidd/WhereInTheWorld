@@ -1,0 +1,4 @@
+.card-image--cover {
+    object-fit: cover;
+    height: 400px;
+}

@@ -1,0 +1,26 @@
+.card-title,
+.card-body-details span,
+.card-body-details li {
+  font-size: 14px;
+  font-family: sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card-body-details span {
+  color: var(--color-DarkCoolGrey-info);
+}
+
+.border-countries h5 {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 765px) {
+  .border-countries {
+    width: 95%;
+  }
+  .border-countries h5 {
+    font-size: 14px;
+  }
+}

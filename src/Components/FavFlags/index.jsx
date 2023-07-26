@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-import FavFlag from '../FavFlag'
+import FavFlag from '../ui/FavFlag'
 
 const FavFlags = () => {
     return (

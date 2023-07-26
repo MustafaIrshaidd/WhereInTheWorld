@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './styles.module.css';
+import { Link } from 'react-router-dom';
 
 const FlagCard = ({ data }) => {
     return (
         <>
             <div className="col-10 col-md-4 mb-5 position-relative">
-                <a
+                <Link
                     aria-label={data.index}
-                    href={`card-details.html?card=${data.index}`}
+                    to={`card-details.html?card=${data.index}`}
                     className={`${styles['card-hover--scale-down']} card overflow-hidden shadow-sm border-0 rounded-2`}
                     draggable="true"
                     id={data.countryCommonName}
@@ -21,7 +22,7 @@ const FlagCard = ({ data }) => {
                             <li>Capital: <span>{data.countryCapital}</span></li>
                         </ul>
                     </div>
-                </a>
+                </Link>
                 {data.isFavourite ? (
                     <i className={`fa-solid fa-star ${styles['color-favourite']}`} />
                 ) : (

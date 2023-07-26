@@ -1,0 +1,23 @@
+.link {
+  color: var(--color-DarkCoolGrey-info);
+  font-size: 14px;
+  padding: 6px 0px;
+  font-family: sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: var(--bg-White-element);
+  line-height: 14px;
+  transition: box-shadow 0.3s !important;
+}
+
+.link:hover {
+    box-shadow: none !important;
+}
+
+
+@media screen and (min-width: 765px) {
+    .links{
+      font-size: 12px;
+    }
+}
