@@ -11,7 +11,7 @@ h5 {
 }
 
 img {
-    height: 175px;
+    height: 175px !important;
     object-fit: cover;
 }
 
@@ -38,9 +38,6 @@ li span {
 }
 
 @media only screen and (min-width: 903px) {
-    img {
-        height: 200px;
-    }
 
     h5 {
         font-size: 18px;
@@ -61,13 +58,13 @@ li span {
         overflow: hidden;
     }
 
-    .color-favourite {
+    .fav-star-visiblity {
         visibility: hidden;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .color-favourite {
+    .fav-star-visiblity {
         position: absolute;
         bottom: 13px;
         right: 28px;

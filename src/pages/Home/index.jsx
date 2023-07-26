@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import FlagsContainer from '../../Components/FlagsContainer'
 import FlagsFilter from '../../Components/FlagsFilter'
 
+
 const HomePage = () => {
+    
   return (
     <>
     <main>
