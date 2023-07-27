@@ -1,11 +1,16 @@
 // Filtering based on dropDownMenu
 
-export const filterFlagsData = (region, country, data) => {
+export const filterFlagsData = (region, country, data, favouriteData) => {
   country = country.toLowerCase();
-
+  
   let filteredByRegion = data || [];
 
-  if (region) {
+  if (region == "Favourites") {
+    filteredByRegion = filteredByRegion.filter((country) => {
+      return favouriteData.hasOwnProperty(country.name.common);
+    });
+  }
+  else if (region) {
     filteredByRegion = filteredByRegion.filter((data) => {
       return data.region === region;
     });

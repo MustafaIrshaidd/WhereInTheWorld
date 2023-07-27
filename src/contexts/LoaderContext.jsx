@@ -7,11 +7,10 @@ const LoaderProvider = ({ children }) => {
 
   const startLoader = () => {
     setIsLoading(true);
-    console.log("Test");
   };
 
   const stopLoader = () => {
-      setIsLoading(false);
+    setIsLoading(false);
   };
 
   return (

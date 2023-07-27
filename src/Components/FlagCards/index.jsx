@@ -5,18 +5,23 @@ import FlagCard from "../ui/FlagCard";
 import { FlagsContext } from "../../contexts/FlagsContext";
 import { LoaderContext } from "../../contexts/LoaderContext";
 import { filterFlagsData } from "../../utils/filterFlagsData";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { doesKeyExist } from "../../utils/verifyKeyExistance";
 
 const FlagCards = ({ filterValue }) => {
+  const [favoriteFlags] = useLocalStorage("favouriteFlags");
   const { data } = useContext(FlagsContext);
   const { isLoading } = useContext(LoaderContext);
 
   let filteredData = filterFlagsData(
     filterValue.selectedOption,
     filterValue.searchValue,
-    data
+    data,
+    favoriteFlags
   );
 
   // Function to render FlagCardLoader components
+
   const renderFlagCardLoaders = () => {
     const numLoaders = 6;
     const loaders = Array.from({ length: numLoaders }, (_, index) => (
@@ -43,10 +48,10 @@ const FlagCards = ({ filterValue }) => {
                 <FlagCard
                   data={flag}
                   index={index}
-                  isFavourite={true}
+                  isFavourite={doesKeyExist(favoriteFlags,flag.name.common)}
                   draggable
                   onDragStart={dragFromFlagsCards}
-                /> 
+                />
               ))}
         </div>
       </section>
