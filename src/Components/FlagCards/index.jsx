@@ -7,6 +7,8 @@ import { LoaderContext } from "../../contexts/LoaderContext";
 import { filterFlagsData } from "../../utils/filterFlagsData";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { doesKeyExist } from "../../utils/verifyKeyExistance";
+import NotFound from "../NotFound";
+
 
 const FlagCards = ({ filterValue }) => {
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
@@ -42,17 +44,21 @@ const FlagCards = ({ filterValue }) => {
         <div
           className={`row justify-content-center justify-content-md-between scrollable-element`}
           id="cardsContent">
-          {isLoading
-            ? renderFlagCardLoaders()
-            : filteredData.map((flag, index) => (
-                <FlagCard
-                  data={flag}
-                  index={index}
-                  isFavourite={doesKeyExist(favoriteFlags,flag.name.common)}
-                  draggable
-                  onDragStart={dragFromFlagsCards}
-                />
-              ))}
+          {isLoading ? (
+            renderFlagCardLoaders()
+          ) : filteredData.length === 0 ? (
+            <NotFound/>
+          ) :  (
+            filteredData.map((flag, index) => (
+              <FlagCard
+                data={flag}
+                index={index}
+                isFavourite={doesKeyExist(favoriteFlags, flag.name.common)}
+                draggable
+                onDragStart={dragFromFlagsCards}
+              />
+            ))
+          )}
         </div>
       </section>
     </>

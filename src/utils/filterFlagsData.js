@@ -5,7 +5,7 @@ export const filterFlagsData = (region, country, data, favouriteData) => {
   
   let filteredByRegion = data || [];
 
-  if (region == "Favourites") {
+  if (region === "Favourites") {
     filteredByRegion = filteredByRegion.filter((country) => {
       return favouriteData.hasOwnProperty(country.name.common);
     });
