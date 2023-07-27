@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route element={<FlagsProvider />}>
           <Route path="" element={<HomePage />}></Route>
-          <Route path="/flag-details/:cardNum" element={<FlagDetailsPage />}></Route>
+          <Route path="/flag-details/:countryName" element={<FlagDetailsPage />}></Route>
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

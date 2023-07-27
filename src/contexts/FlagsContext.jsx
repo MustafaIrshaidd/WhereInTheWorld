@@ -10,7 +10,7 @@ const FlagsProvider = ({ children }) => {
   const { isLoading, startLoader, stopLoader } = useContext(LoaderContext);
 
   const { data, error } = useFetch(
-    "https://restcountries.com/v3.1/all?fields=true&fields=name,flags,region,capital,population,currencies,languages,subregion,borders,tld"
+    "https://restcountries.com/v3.1/all?fields=true&fields=name,flags,region,capital,population"
   );
 
   data ? stopLoader() : startLoader();

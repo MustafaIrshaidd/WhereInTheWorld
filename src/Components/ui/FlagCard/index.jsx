@@ -9,7 +9,7 @@ const FlagCard = ({ data, index, isFavourite }) => {
       <div className="col-10 col-md-4 mb-5 position-relative">
         <Link
           aria-label={index}
-          to={`flag-details/${index}`}
+          to={`flag-details/${data.name.official}`}
           className={`${styles["card-hover--scale-down"]} card overflow-hidden shadow-sm border-0 rounded-2`}
           draggable="true"
           id={data.name.common}>

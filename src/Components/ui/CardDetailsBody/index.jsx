@@ -20,33 +20,37 @@ const CardDetailsBody = ({ data }) => {
           className={`${styles["card-body-details"]} d-flex flex-column flex-md-row gap-4 justify-content-start align-items-start p-0 pb-3`}>
           <div className="col">
             <li className="py-2">
-              Population: 
-              <span> {formatNum_EN_IN(data.population)}</span>
+              Population:
+              <span> {formatNum_EN_IN(data?.population)}</span>
             </li>
             <li className="py-2">
-              Region: 
-              <span> {data.region}</span>
+              Region:
+              <span> {data?.region}</span>
             </li>
             <li className="py-2">
-              Sub Region: 
-              <span> {data.subregion}</span>
+              Sub Region:
+              <span> {data?.subregion || <NotFound />}</span>
             </li>
             <li className="py-2">
-              Capital: 
-              <span> {data.capital[0]}</span>
+              Capital:
+              <span> {arrToString(data?.capital) || <NotFound />}</span>
             </li>
           </div>
           <div className="col-md-6">
             <li className="py-2">
               Top Level Domain:
-              <span> {data.tld[0]}</span>
+              <span> {data?.tld[0]}</span>
             </li>
             <li className="py-2">
-              Currencies: <span> {currenciesToString(data.currencies)}</span>
+              Currencies:{" "}
+              <span>
+                {" "}
+                {currenciesToString(data?.currencies) || <NotFound />}
+              </span>
             </li>
             <li className="py-2">
-              Languages: 
-              <span> {arrToString(data.languages)}</span>
+              Languages:
+              <span> {arrToString(data?.languages) || <NotFound />}</span>
             </li>
           </div>
         </ul>
@@ -56,12 +60,12 @@ const CardDetailsBody = ({ data }) => {
             Border Countries:
           </h5>
           <div className="border-countries-links col-md row justify-content-between justify-content-md-start align-items-center p-0 my-4 text-center">
-            {typeof data.borders.length !== 0 ? (
+            {typeof data?.borders !== "undefined" ? (
               data.borders.map((border) => (
                 <LinkBtn to="/" title={border} key={border} />
               ))
             ) : (
-              <NotFound/>
+              <NotFound />
             )}
           </div>
         </aside>
