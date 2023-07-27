@@ -15,14 +15,8 @@ const useFetch = (url) => {
 
         const jsonData = await response.json();
         setData(jsonData);
-
-        // setTimeout(() => {
-        // }, 3000);
       } catch (error) {
         setError(error);
-
-        // setTimeout(() => {
-        // }, 3000);
       }
     };
 

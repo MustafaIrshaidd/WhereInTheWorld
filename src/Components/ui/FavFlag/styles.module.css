@@ -28,3 +28,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.favImg{
+    height:35px !important;
+    width:53px !important;
+}

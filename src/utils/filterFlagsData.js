@@ -11,8 +11,6 @@ export const filterFlagsData = (region, country, data) => {
     });
   }
 
-  console.log(region, country);
-
   if (!country.length) {
     return filteredByRegion;
   }

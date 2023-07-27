@@ -7,7 +7,7 @@ import { LoaderContext } from "./LoaderContext";
 export const FlagsContext = createContext();
 
 const FlagsProvider = ({ children }) => {
-  const { isLoading, startLoader, stopLoader } = useContext(LoaderContext);
+  const { startLoader, stopLoader } = useContext(LoaderContext);
 
   const { data, error } = useFetch(
     "https://restcountries.com/v3.1/all?fields=true&fields=name,flags,region,capital,population"

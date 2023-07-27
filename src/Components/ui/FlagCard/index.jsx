@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { formatNum_EN_IN } from "../../../utils/formatters";
 
-const FlagCard = ({ data, index, isFavourite }) => {
+const FlagCard = ({ data, index, isFavourite, onDragStart }) => {
+  const cardRef = useRef(null);
+
+  const handleDragStart = (ev) => {
+    onDragStart(ev);
+  };
+
   return (
     <>
-      <div className="col-10 col-md-4 mb-5 position-relative">
+      <div className="col-10 col-md-4 mb-5 position-relative rounded-2">
         <Link
           aria-label={index}
           to={`flag-details/${data.name.official}`}
-          className={`${styles["card-hover--scale-down"]} card overflow-hidden shadow-sm border-0 rounded-2`}
+          className={`${styles["card-hover--scale-down"]} card overflow-hidden shadow-sm border-0`}
           draggable="true"
+          ref={cardRef}
+          onDragStart={handleDragStart}
           id={data.name.common}>
           <img
             className="img-fluid w-100"

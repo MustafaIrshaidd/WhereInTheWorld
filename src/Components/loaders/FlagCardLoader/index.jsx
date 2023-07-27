@@ -4,12 +4,12 @@ import styles from "./styles.module.css";
 const FlagCardLoader = () => {
   return (
     <>
-      <div className="col-10 col-md-4 mb-5">
+      <div className="col-10 col-md-4 mb-5 rounded-2">
         <a
           href="#"
-          className="card overflow-hidden shadow-sm border-0 rounded-2">
+          className="card overflow-hidden shadow-sm border-0">
           <div
-            className={`${styles['card-image']} img-fluid w-100 ${styles['loader']} rounded-2`}
+            className={`${styles['card-image']} img-fluid w-100 ${styles['loader']}`}
           />
 
           <div className={`${styles['card-body--bg']} p-4`}>
