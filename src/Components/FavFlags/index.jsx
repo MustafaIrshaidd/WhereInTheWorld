@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 
 import FavFlag from "../ui/FavFlag";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { doesKeyExist } from "../../utils/verifyKeyExistance";
 
 const FavFlags = () => {
+  const [favoriteFlags, setFavoriteFlags] = useLocalStorage(
+    "favouriteFlags",
+    {}
+  );
+
   const allowDropOnFavouriteFlags = (ev) => {
     ev.preventDefault();
   };
 
   // Drop Funtionallity on Favourite FLags Section
-
-  const [favoriteFlags, setFavoriteFlags] = useState([]);
 
   const dropOnFavouriteFlags = (ev) => {
     ev.preventDefault();
@@ -23,11 +28,27 @@ const FavFlags = () => {
     const flagTitle = tempElement.querySelector("h5").innerHTML;
     const flagSource = tempElement.querySelector("img").getAttribute("src");
 
+    if (doesKeyExist(favoriteFlags, flagTitle)) {
+      return;
+    }
+
     // Update the state with the new favorite flag
-    setFavoriteFlags((prevFlags) => [
+    setFavoriteFlags((prevFlags) => ({
       ...prevFlags,
-      { imgSrc: flagSource, countryName: flagTitle },
-    ]);
+      [flagTitle]: { imgSrc: flagSource, countryName: flagTitle },
+    }));
+  };
+
+  const extractFromLocalStorage = (ev) => {
+    const countryName = ev.target
+      .closest(".flag-content")
+      .querySelector("h5").innerHTML;
+
+    const updatedObj = Object.fromEntries(
+      Object.entries(favoriteFlags).filter(([key]) => key !== countryName)
+    );
+
+    setFavoriteFlags(updatedObj);
   };
   return (
     <>
@@ -40,10 +61,12 @@ const FavFlags = () => {
             id="favContent"
             onDrop={dropOnFavouriteFlags}
             onDragOver={allowDropOnFavouriteFlags}>
-            {favoriteFlags.map((flag) => (
+            {Object.keys(favoriteFlags).map((flagTitle) => (
               <FavFlag
-                imgSrc={flag.imgSrc}
-                countryName={flag.countryName}
+                key={flagTitle}
+                imgSrc={favoriteFlags[flagTitle].imgSrc}
+                countryName={flagTitle}
+                deleteMe={extractFromLocalStorage}
               />
             ))}
           </div>
