@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import FlagsContainer from "./components/FlagsContainer";
+import HomePageContainer from "./components/HomePageContainer";
 import FlagsFilter from "./components/FlagsFilter";
 
 const HomePage = () => {
@@ -17,7 +17,7 @@ const HomePage = () => {
     <>
       <main>
         <FlagsFilter onFilterChange={handleFilterChange} />
-        <FlagsContainer filterValue={filterValue} />
+        <HomePageContainer filterValue={filterValue} />
       </main>
     </>
   );

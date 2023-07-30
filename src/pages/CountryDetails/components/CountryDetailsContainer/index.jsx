@@ -5,9 +5,9 @@ import { LoaderContext } from "../../../../contexts/LoaderContext";
 import  CardDetailsLoader  from "../../../../Components/loaders/CardDetailsLoader";
 import { useParams } from "react-router-dom";
 import useFetch from "../../../../hooks/usefetch";
-import  CardDetails  from "../CardDetails";
+import  CountryDetailsCard  from "../CountryDetailsCard";
 
-const FlagDetailsContainer = () => {
+const CountryDetailsContainer = () => {
   const { isLoading, stopLoader, startLoader } = useContext(LoaderContext);
   const { countryName } = useParams();
 
@@ -34,7 +34,7 @@ const FlagDetailsContainer = () => {
               </>
             ) : (
               <>
-                <CardDetails data={data?.[0]}></CardDetails>
+                <CountryDetailsCard data={data?.[0]}></CountryDetailsCard>
               </>
             )}
           </div>
@@ -44,4 +44,4 @@ const FlagDetailsContainer = () => {
   );
 };
 
-export default FlagDetailsContainer;
+export default CountryDetailsContainer;

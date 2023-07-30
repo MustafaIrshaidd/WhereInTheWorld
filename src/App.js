@@ -6,11 +6,10 @@ import "bootstrap/dist/js/bootstrap";
 import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/Home";
-import FlagDetailsPage from "./pages/FlagDetails";
+import CountryDetailsPage from "./pages/CountryDetails";
 import NotFound from "./Components/NotFound";
-
-import FlagsProvider from "./contexts/FlagsContext";
 import Navbar from "./Components/Navbar";
+import FlagsProvider from "./contexts/FlagsContext";
 import LoaderProvider from "./contexts/LoaderContext";
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
       <Routes>
         <Route element={<FlagsProvider />}>
           <Route path="" element={<HomePage />}></Route>
-          <Route path="/flag-details/:countryName" element={<FlagDetailsPage />}></Route>
+          <Route path="/flag-details/:countryName" element={<CountryDetailsPage />}></Route>
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

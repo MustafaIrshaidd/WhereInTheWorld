@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import FlagCardLoader from "../../../../Components/loaders/FlagCardLoader"
-import FlagCard from "../FlagCard";
+import CountryCard from "../CountryCard";
 import { FlagsContext } from "../../../../contexts/FlagsContext";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
 import { filterFlagsData } from "../../../../utils/filterFlagsData";
@@ -9,7 +9,7 @@ import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import { doesKeyExist } from "../../../../utils/verifyKeyExistance";
 import NotFound from "../../../../Components/NotFound";
 
-const FlagCards = ({ filterValue }) => {
+const CountriesCardsContainer = ({ filterValue }) => {
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
   const { data } = useContext(FlagsContext);
   const { isLoading } = useContext(LoaderContext);
@@ -49,7 +49,7 @@ const FlagCards = ({ filterValue }) => {
             <NotFound />
           ) : (
             filteredData.map((flag, index) => (
-              <FlagCard
+              <CountryCard
                 data={flag}
                 index={index}
                 isFavourite={doesKeyExist(favoriteFlags, flag.name.common)}
@@ -64,4 +64,4 @@ const FlagCards = ({ filterValue }) => {
   );
 };
 
-export default FlagCards;
+export default CountriesCardsContainer;

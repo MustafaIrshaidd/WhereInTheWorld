@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { formatNum_EN_IN } from "../../../../utils/formatters";
 
-const FlagCard = ({ data, index, isFavourite, onDragStart }) => {
+const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
   const cardRef = useRef(null);
 
   const handleDragStart = (ev) => {
@@ -59,4 +59,4 @@ const FlagCard = ({ data, index, isFavourite, onDragStart }) => {
   );
 };
 
-export default FlagCard;
+export default CountryCard;

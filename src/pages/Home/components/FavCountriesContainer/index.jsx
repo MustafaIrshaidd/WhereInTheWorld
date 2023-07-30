@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-import FavFlag from "../FavFlag"
+import FavCountry from "../FavCountry"
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import { doesKeyExist } from "../../../../utils/verifyKeyExistance";
 
-const FavFlags = () => {
+const FavCountriesContainer = () => {
   const [favoriteFlags, setFavoriteFlags] = useLocalStorage(
     "favouriteFlags",
     {}
@@ -62,7 +62,7 @@ const FavFlags = () => {
             onDrop={dropOnFavouriteFlags}
             onDragOver={allowDropOnFavouriteFlags}>
             {Object.keys(favoriteFlags).map((flagTitle) => (
-              <FavFlag
+              <FavCountry
                 key={flagTitle}
                 imgSrc={favoriteFlags[flagTitle].imgSrc}
                 countryName={flagTitle}
@@ -76,4 +76,4 @@ const FavFlags = () => {
   );
 };
 
-export default FavFlags;
+export default FavCountriesContainer;

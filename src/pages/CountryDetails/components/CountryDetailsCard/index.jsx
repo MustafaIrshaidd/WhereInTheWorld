@@ -8,7 +8,7 @@ import {
   } from "../../../../utils/formatters";
   import NotFound from "../../../../Components/NotFound";
 
-const CardDetails = ({ data }) => {
+const CountryDetailsCard = ({ data }) => {
   return (
     <>
       <div
@@ -82,4 +82,4 @@ const CardDetails = ({ data }) => {
   );
 };
 
-export default CardDetails;
+export default CountryDetailsCard;
