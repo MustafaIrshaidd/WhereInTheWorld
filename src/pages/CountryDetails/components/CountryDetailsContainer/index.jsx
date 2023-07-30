@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import  BackBtn  from "../../../../Components/forms/BackBtn";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
-import  CardDetailsLoader  from "../../../../Components/loaders/CardDetailsLoader";
+import  CountryDetailsCardLoader  from "../../../../Components/loaders/CountryDetailsCardLoader";
 import { useParams } from "react-router-dom";
 import useFetch from "../../../../hooks/usefetch";
 import  CountryDetailsCard  from "../CountryDetailsCard";
@@ -30,7 +30,7 @@ const CountryDetailsContainer = () => {
           <div className="row m-0 mt-4 gap-5" id="cardContent">
             {isLoading || !data ? (
               <>
-                <CardDetailsLoader />
+                <CountryDetailsCardLoader />
               </>
             ) : (
               <>

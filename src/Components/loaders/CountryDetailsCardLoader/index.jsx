@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-const CardDetailsLoader = () => {
+const CountryDetailsCardLoader = () => {
   return (
     <>
       <div className="row m-0 mt-4 gap-5" id="cardContent">
@@ -26,4 +26,4 @@ const CardDetailsLoader = () => {
   );
 };
 
-export default CardDetailsLoader;
+export default CountryDetailsCardLoader;

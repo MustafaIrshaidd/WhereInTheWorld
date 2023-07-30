@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import FlagCardLoader from "../../../../Components/loaders/FlagCardLoader"
+import CountryCardLoader from "../../../../Components/loaders/CountryCardLoader"
 import CountryCard from "../CountryCard";
 import { FlagsContext } from "../../../../contexts/FlagsContext";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
@@ -21,12 +21,12 @@ const CountriesCardsContainer = ({ filterValue }) => {
     favoriteFlags
   );
 
-  // Function to render FlagCardLoader components
+  // Function to render CountryCardLoader components
 
   const renderFlagCardLoaders = () => {
     const numLoaders = 6;
     const loaders = Array.from({ length: numLoaders }, (_, index) => (
-      <FlagCardLoader />
+      <CountryCardLoader />
     ));
     return loaders;
   };
@@ -46,7 +46,7 @@ const CountriesCardsContainer = ({ filterValue }) => {
           {isLoading ? (
             renderFlagCardLoaders()
           ) : filteredData.length === 0 ? (
-            <NotFound />
+            <NotFound content={"No Results Found !"} />
           ) : (
             filteredData.map((flag, index) => (
               <CountryCard

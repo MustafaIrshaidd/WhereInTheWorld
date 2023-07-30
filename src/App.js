@@ -21,7 +21,7 @@ function App() {
           <Route path="" element={<HomePage />}></Route>
           <Route path="/flag-details/:countryName" element={<CountryDetailsPage />}></Route>
         </Route>
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="*" element={<NotFound content={"Page Not Found !"}/>}></Route>
       </Routes>
     </LoaderProvider>
   );

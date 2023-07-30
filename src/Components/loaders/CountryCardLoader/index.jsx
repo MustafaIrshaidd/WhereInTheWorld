@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-const FlagCardLoader = () => {
+const CountryCardLoader = () => {
   return (
     <>
       <div className="col-10 col-md-4 mb-5 rounded-2">
@@ -32,4 +32,4 @@ const FlagCardLoader = () => {
   );
 };
 
-export default FlagCardLoader;
+export default CountryCardLoader;
