@@ -1,6 +1,6 @@
 import React from 'react'
 
-import FlagDetailsContainer from '../../Components/FlagDetailsContainer'
+import FlagDetailsContainer from './components/FlagDetailsContainer'
 
 const FlagDetailsPage = () => {
   return (

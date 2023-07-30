@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import FlagsContainer from "../../Components/FlagsContainer";
-import FlagsFilter from "../../Components/FlagsFilter";
+import FlagsContainer from "./components/FlagsContainer";
+import FlagsFilter from "./components/FlagsFilter";
 
 const HomePage = () => {
   const [filterValue, setFilterValue] = useState({

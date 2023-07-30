@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 
-import FavFlag from "../ui/FavFlag";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { doesKeyExist } from "../../utils/verifyKeyExistance";
+import FavFlag from "../FavFlag"
+import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { doesKeyExist } from "../../../../utils/verifyKeyExistance";
 
 const FavFlags = () => {
   const [favoriteFlags, setFavoriteFlags] = useLocalStorage(

@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
 
-import FlagCardLoader from "../loaders/FlagCardLoader";
-import FlagCard from "../ui/FlagCard";
-import { FlagsContext } from "../../contexts/FlagsContext";
-import { LoaderContext } from "../../contexts/LoaderContext";
-import { filterFlagsData } from "../../utils/filterFlagsData";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { doesKeyExist } from "../../utils/verifyKeyExistance";
-import NotFound from "../NotFound";
-
+import FlagCardLoader from "../../../../Components/loaders/FlagCardLoader"
+import FlagCard from "../FlagCard";
+import { FlagsContext } from "../../../../contexts/FlagsContext";
+import { LoaderContext } from "../../../../contexts/LoaderContext";
+import { filterFlagsData } from "../../../../utils/filterFlagsData";
+import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { doesKeyExist } from "../../../../utils/verifyKeyExistance";
+import NotFound from "../../../../Components/NotFound";
 
 const FlagCards = ({ filterValue }) => {
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
@@ -47,8 +46,8 @@ const FlagCards = ({ filterValue }) => {
           {isLoading ? (
             renderFlagCardLoaders()
           ) : filteredData.length === 0 ? (
-            <NotFound/>
-          ) :  (
+            <NotFound />
+          ) : (
             filteredData.map((flag, index) => (
               <FlagCard
                 data={flag}

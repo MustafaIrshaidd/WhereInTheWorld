@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 
-import BackBtn from "../forms/BackBtn";
-import CardDetailsBody from "../ui/CardDetailsBody";
-import CardDetailsImage from "../ui/CardDetailsImage";
-import CardDetailsLoader from "../loaders/CardDetailsLoader";
-
-import { FlagsContext } from "../../contexts/FlagsContext";
-import { LoaderContext } from "../../contexts/LoaderContext";
+import  BackBtn  from "../../../../Components/forms/BackBtn";
+import { LoaderContext } from "../../../../contexts/LoaderContext";
+import  CardDetailsLoader  from "../../../../Components/loaders/CardDetailsLoader";
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/usefetch";
+import useFetch from "../../../../hooks/usefetch";
+import  CardDetails  from "../CardDetails";
 
 const FlagDetailsContainer = () => {
   const { isLoading, stopLoader, startLoader } = useContext(LoaderContext);
@@ -37,9 +34,7 @@ const FlagDetailsContainer = () => {
               </>
             ) : (
               <>
-                <CardDetailsImage
-                  imageSource={data?.[0].flags.svg}></CardDetailsImage>
-                <CardDetailsBody data={data?.[0]}></CardDetailsBody>
+                <CardDetails data={data?.[0]}></CardDetails>
               </>
             )}
           </div>
