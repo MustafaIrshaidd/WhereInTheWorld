@@ -21,13 +21,13 @@ const FlagsFilter = ({ onFilterChange }) => {
           className="centralized-container m-auto d-md-flex justify-content-md-between align-items-md-center py-5"
           onSubmit={(e) => e.preventDefault()}>
           <SearchBar
-            width="col-12 col-md-6"
+            className="col-12 col-md-6"
             placeholder="Search for a country..."
             onKeyUp={(value) =>
               onFilterChange("searchValue", value)
             }></SearchBar>
           <DropdownMenu
-            width="col-7 col-md-3 col-lg-2"
+            className="col-7 col-md-3 col-lg-2"
             placeholder="Filter By"
             options={dropDownMenuOptions}
             onSelect={(value) =>

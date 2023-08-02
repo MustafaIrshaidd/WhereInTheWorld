@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-const SearchBar = ({ width, placeholder, onKeyUp }) => {
+const SearchBar = ({ className, placeholder, onKeyUp }) => {
   const handleSearchValue = (event) => {
     onKeyUp(event.target.value);
   };
@@ -12,7 +12,7 @@ const SearchBar = ({ width, placeholder, onKeyUp }) => {
         className={
           styles["search-input"] +
           " shadow-sm position-relative rounded-2 " +
-          width
+          className
         }>
         <input
           onKeyUp={handleSearchValue}

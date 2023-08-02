@@ -1,16 +1,16 @@
 /* Dropdown Filter */
 
-.dropdown {
+.dropdown--container {
     background-color: var(--bg-White-element);
 }
 
-.btn {
+.dropdown--btn {
     background-color: transparent;
     color: var(--color-DarkCoolGrey-info);
     transition: none;
 }
 
-.btn::after {
+.dropdown--btn::after {
 
     position: absolute;
     content: "\f107";
@@ -24,16 +24,16 @@
     border: none;
 }
 
-.regions-dropdown--btns {
+.filterby-dropdown--btns {
     background-color: var(--bg-White-element);
 }
 
-.regions-dropdown--btns li button {
+.filterby-dropdown--btns li button {
     color: var(--color-DarkCoolGrey-info);
     transition: linear;
 }
 
-.regions-dropdown--btns li button:hover {
+.filterby-dropdown--btns li button:hover {
     background-color: var(--color-LoyalBlue) !important;
     color: var(--bg-White-element);
 }
