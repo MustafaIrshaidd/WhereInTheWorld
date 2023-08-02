@@ -41,7 +41,7 @@ const CountriesCardsContainer = ({ filterValue }) => {
     <>
       <section className="col-12 col-md-9 card-section pb-1 rounded-2">
         <div
-          className={`row justify-content-center justify-content-md-between scrollable-element`}
+          className={`row justify-content-center justify-content-md-start scrollable-element`}
           id="cardsContent">
           {isLoading ? (
             renderFlagCardLoaders()
