@@ -5,6 +5,15 @@ import SearchBar from "../../../../Components/forms/SearchBar";
 import DropdownMenu from "../../../../Components/forms/DropdownMenu";
 
 const FlagsFilter = ({ onFilterChange }) => {
+  const dropDownMenuOptions = [
+    "Favourites",
+    "Africa",
+    "Americas",
+    "Asia",
+    "Europe",
+    "Oceania",
+  ];
+
   return (
     <>
       <section className={styles["form-section"]}>
@@ -20,14 +29,7 @@ const FlagsFilter = ({ onFilterChange }) => {
           <DropdownMenu
             width="col-7 col-md-3 col-lg-2"
             placeholder="Filter By"
-            options={[
-              "Favourites",
-              "Africa",
-              "Americas",
-              "Asia",
-              "Europe",
-              "Oceania",
-            ]}
+            options={dropDownMenuOptions}
             onSelect={(value) =>
               onFilterChange("selectedOption", value)
             }></DropdownMenu>
