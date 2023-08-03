@@ -9,12 +9,19 @@ import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import NotFound from "../../../../Components/NotFound";
 
 const CountriesCardsContainer = ({ filterBy }) => {
+  // LocalStorage Custom Hook
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
+
+  // Countries data Context
   const { data } = useContext(CountriesContext);
+
+  // is Loading Context
   const { isLoading } = useContext(LoaderContext);
 
+  // splitting filterBy props
   const { filterType, searchQuery } = filterBy;
 
+  // Data are filtered through a utility - Frontend Filtering
   let filteredData = filterCountriesData(
     filterType,
     searchQuery,
@@ -23,7 +30,6 @@ const CountriesCardsContainer = ({ filterBy }) => {
   );
 
   // Function to render CountryCardLoader components
-
   const renderFlagCardLoaders = () => {
     const numLoaders = 6;
     const loaders = Array.from({ length: numLoaders }, (_, index) => (

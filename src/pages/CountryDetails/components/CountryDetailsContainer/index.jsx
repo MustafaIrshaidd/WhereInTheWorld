@@ -8,15 +8,18 @@ import useFetch from "../../../../hooks/usefetch";
 import  CountryDetailsCard  from "../CountryDetailsCard";
 
 const CountryDetailsContainer = () => {
+  // isLoading Context
   const { isLoading, stopLoader, startLoader } = useContext(LoaderContext);
+
+  // get CountryName from params
   const { countryName } = useParams();
 
+  // fetching API on countryName
   const { data, error } = useFetch(
     `https://restcountries.com/v3.1/name/${countryName}`
   );
 
-  console.log(data?.[0]);
-
+  // if Data arrived stopLoader
   data ? stopLoader() : startLoader();
 
   return (

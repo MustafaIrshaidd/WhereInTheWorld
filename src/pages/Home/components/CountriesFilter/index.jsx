@@ -5,6 +5,9 @@ import SearchBar from "../../../../Components/forms/SearchBar";
 import DropdownMenu from "../../../../Components/forms/DropdownMenu";
 
 const FlagsFilter = ({ onFilterChange }) => {
+
+  // Constant Values for dropDownMenu
+
   const dropDownMenuOptions = [
     "Favourites",
     "Africa",

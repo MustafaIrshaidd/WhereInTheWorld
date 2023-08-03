@@ -5,16 +5,20 @@ import FavCountry from "../FavCountry";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 
 const FavCountriesContainer = () => {
+  // setFavouriteCountries in local storage as an empty array
+
   const [favoriteFlags, setFavoriteFlags] = useLocalStorage(
     "favouriteFlags",
     {}
   );
 
+  // allow drop on FavCountriesContainer
+
   const allowDropOnFavouriteFlags = (ev) => {
     ev.preventDefault();
   };
 
-  // Drop Funtionallity on Favourite FLags Section
+  // Drop Funtionallity on FavCountriesContainer
 
   const dropOnFavouriteFlags = (ev) => {
     ev.preventDefault();
@@ -24,6 +28,8 @@ const FavCountriesContainer = () => {
     const tempElement = document.createElement("div");
     tempElement.innerHTML = serializedElement;
 
+    // extracting countryName and imgSource from DOM API
+
     const flagTitle = tempElement.querySelector("h5").innerHTML;
     const flagSource = tempElement.querySelector("img").getAttribute("src");
 
@@ -31,12 +37,15 @@ const FavCountriesContainer = () => {
       return;
     }
 
-    // Update the state with the new favorite flag
+    // Update the state with the new favCountry
+
     setFavoriteFlags((prevFlags) => ({
       ...prevFlags,
       [flagTitle]: { imgSrc: flagSource, countryName: flagTitle },
     }));
   };
+
+  // Delete favCountry From Local Storage
 
   const extractFromLocalStorage = (ev) => {
     const countryName = ev.target
@@ -46,7 +55,6 @@ const FavCountriesContainer = () => {
     const updatedObj = Object.fromEntries(
       Object.entries(favoriteFlags).filter(([key]) => key !== countryName)
     );
-
     setFavoriteFlags(updatedObj);
   };
   return (
