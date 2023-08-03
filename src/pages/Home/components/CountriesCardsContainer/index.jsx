@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import CountryCardLoader from "../../../../Components/loaders/CountryCardLoader";
 import CountryCard from "../CountryCard";
-import { FlagsContext } from "../../../../contexts/FlagsContext";
+import { CountriesContext } from "../../../../contexts/CountriesContext";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
 import { filterCountriesData } from "../../../../utils/countriesUtils";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
@@ -10,7 +10,7 @@ import NotFound from "../../../../Components/NotFound";
 
 const CountriesCardsContainer = ({ filterBy }) => {
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
-  const { data } = useContext(FlagsContext);
+  const { data } = useContext(CountriesContext);
   const { isLoading } = useContext(LoaderContext);
 
   const { filterType, searchQuery } = filterBy;
@@ -55,7 +55,7 @@ const CountriesCardsContainer = ({ filterBy }) => {
               <CountryCard
                 data={flag}
                 index={index}
-                isFavourite={favoriteFlags.hasOwnProperty(flag.name.common)}
+                isFavourite={favoriteFlags?.hasOwnProperty(flag.name.common)}
                 draggable
                 onDragStart={dragFromFlagsCards}
               />

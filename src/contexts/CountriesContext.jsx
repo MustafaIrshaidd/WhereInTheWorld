@@ -4,9 +4,9 @@ import useFetch from "../hooks/usefetch";
 import { Outlet } from "react-router-dom";
 import { LoaderContext } from "./LoaderContext";
 
-export const FlagsContext = createContext();
+export const CountriesContext = createContext();
 
-const FlagsProvider = ({ children }) => {
+const CountriesProvider = ({ children }) => {
   const { startLoader, stopLoader } = useContext(LoaderContext);
 
   const { data, error } = useFetch(
@@ -17,11 +17,11 @@ const FlagsProvider = ({ children }) => {
 
   return (
     <>
-      <FlagsContext.Provider value={{ data, error }}>
+      <CountriesContext.Provider value={{ data, error }}>
         {children || <Outlet />}
-      </FlagsContext.Provider>
+      </CountriesContext.Provider>
     </>
   );
 };
 
-export default FlagsProvider;
+export default CountriesProvider;

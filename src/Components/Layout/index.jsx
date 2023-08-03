@@ -1,13 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import FlagsProvider from "../../contexts/FlagsContext";
+import countriesProvider from "../../contexts/CountriesContext";
 
 const Layout = () => {
   return (
     <>
-      <FlagsProvider>
+      <countriesProvider>
         <Outlet />
-      </FlagsProvider>
+      </countriesProvider>
     </>
   );
 };
