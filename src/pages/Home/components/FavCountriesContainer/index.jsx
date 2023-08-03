@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-import FavCountry from "../FavCountry"
+import FavCountry from "../FavCountry";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
-import { doesKeyExist } from "../../../../utils/verifyKeyExistance";
 
 const FavCountriesContainer = () => {
   const [favoriteFlags, setFavoriteFlags] = useLocalStorage(
@@ -28,7 +27,7 @@ const FavCountriesContainer = () => {
     const flagTitle = tempElement.querySelector("h5").innerHTML;
     const flagSource = tempElement.querySelector("img").getAttribute("src");
 
-    if (doesKeyExist(favoriteFlags, flagTitle)) {
+    if (favoriteFlags.hasOwnProperty(flagTitle)) {
       return;
     }
 

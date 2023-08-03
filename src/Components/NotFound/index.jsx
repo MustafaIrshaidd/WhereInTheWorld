@@ -7,7 +7,6 @@ const NotFound = ({ content }) => {
       {content ? (
         <div
           className={`${styles["notfound"]} d-flex flex-column gap-5 justify-content-center align-items-center`}>
-          <img src="/notfound.png" alt="image not found" />
           <p className={`text-start`}>{content}</p>
         </div>
       ) : (

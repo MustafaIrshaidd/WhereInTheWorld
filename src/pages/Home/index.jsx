@@ -4,20 +4,20 @@ import HomePageContainer from "./components/HomePageContainer";
 import CountriesFilter from "./components/CountriesFilter";
 
 const HomePage = () => {
-  const [filterValue, setFilterValue] = useState({
-    searchValue: "",
-    selectedOption: "",
+  const [filterBy, setFilterBy] = useState({
+    searchQuery: "",
+    filterType: "",
   });
 
   const handleFilterChange = (key, value) => {
-    setFilterValue((prevState) => ({ ...prevState, [key]: value }));
+    setFilterBy((prevState) => ({ ...prevState, [key]: value }));
   };
 
   return (
     <>
       <main>
         <CountriesFilter onFilterChange={handleFilterChange} />
-        <HomePageContainer filterValue={filterValue} />
+        <HomePageContainer filterBy={filterBy} />
       </main>
     </>
   );

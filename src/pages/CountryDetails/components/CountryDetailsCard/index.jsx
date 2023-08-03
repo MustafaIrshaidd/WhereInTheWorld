@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./styles.module.css";
 import LinkBtn from "../../../../Components/forms/LinkBtn";
 import {
-    formatNum_EN_IN,
-    arrToString,
-    currenciesToString,
-  } from "../../../../utils/formatters";
-  import NotFound from "../../../../Components/NotFound";
+  formatNum_EN_IN,
+  arrToString,
+  currenciesToString,
+} from "../../../../utils/countriesUtils";
+import NotFound from "../../../../Components/NotFound";
 
 const CountryDetailsCard = ({ data }) => {
   return (

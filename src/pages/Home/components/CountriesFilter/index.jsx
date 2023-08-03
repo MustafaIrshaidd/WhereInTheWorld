@@ -24,14 +24,14 @@ const FlagsFilter = ({ onFilterChange }) => {
             className="col-12 col-md-6"
             placeholder="Search for a country..."
             onKeyUp={(value) =>
-              onFilterChange("searchValue", value)
+              onFilterChange("searchQuery", value)
             }></SearchBar>
           <DropdownMenu
             className="col-7 col-md-3 col-lg-2"
             placeholder="Filter By"
             options={dropDownMenuOptions}
             onSelect={(value) =>
-              onFilterChange("selectedOption", value)
+              onFilterChange("filterType", value)
             }></DropdownMenu>
         </form>
       </section>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
-import { formatNum_EN_IN } from "../../../../utils/formatters";
+import { formatNum_EN_IN } from "../../../../utils/countriesUtils";
 
 const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
   const cardRef = useRef(null);

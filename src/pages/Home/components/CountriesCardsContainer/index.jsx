@@ -1,22 +1,23 @@
 import React, { useContext } from "react";
 
-import CountryCardLoader from "../../../../Components/loaders/CountryCardLoader"
+import CountryCardLoader from "../../../../Components/loaders/CountryCardLoader";
 import CountryCard from "../CountryCard";
 import { FlagsContext } from "../../../../contexts/FlagsContext";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
-import { filterFlagsData } from "../../../../utils/filterFlagsData";
+import { filterCountriesData } from "../../../../utils/countriesUtils";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
-import { doesKeyExist } from "../../../../utils/verifyKeyExistance";
 import NotFound from "../../../../Components/NotFound";
 
-const CountriesCardsContainer = ({ filterValue }) => {
+const CountriesCardsContainer = ({ filterBy }) => {
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
   const { data } = useContext(FlagsContext);
   const { isLoading } = useContext(LoaderContext);
 
-  let filteredData = filterFlagsData(
-    filterValue.selectedOption,
-    filterValue.searchValue,
+  const { filterType, searchQuery } = filterBy;
+
+  let filteredData = filterCountriesData(
+    filterType,
+    searchQuery,
     data,
     favoriteFlags
   );
@@ -33,7 +34,9 @@ const CountriesCardsContainer = ({ filterValue }) => {
 
   const dragFromFlagsCards = (ev) => {
     let card = ev.target.closest(".card");
-    if (card) card = card.parentNode;
+
+    card && (card = card.parentNode);
+
     ev.dataTransfer.setData("text/html", card.outerHTML);
   };
 
@@ -52,7 +55,7 @@ const CountriesCardsContainer = ({ filterValue }) => {
               <CountryCard
                 data={flag}
                 index={index}
-                isFavourite={doesKeyExist(favoriteFlags, flag.name.common)}
+                isFavourite={favoriteFlags.hasOwnProperty(flag.name.common)}
                 draggable
                 onDragStart={dragFromFlagsCards}
               />
