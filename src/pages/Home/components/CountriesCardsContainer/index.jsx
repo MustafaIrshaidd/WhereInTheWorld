@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 
-import CountryCardLoader from "../../../../Components/loaders/CountryCardLoader";
+import CountryCardLoader from "../../../../components/loaders/CountryCardLoader";
 import CountryCard from "../CountryCard";
 import { CountriesContext } from "../../../../contexts/CountriesContext";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
 import { filterCountriesData } from "../../../../utils/countriesUtils";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
-import NotFound from "../../../../Components/NotFound";
+import NotFound from "../../../../components/NotFound";
 
 const CountriesCardsContainer = ({ filterBy }) => {
   // LocalStorage Custom Hook

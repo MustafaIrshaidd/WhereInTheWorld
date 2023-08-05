@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 
-const FavCountry = ({ imgSrc, countryName , onDeleteState }) => {
-  
-
+const FavCountry = ({ imgSrc, countryName, onDeleteState }) => {
   const onDeleteHandler = () => {
     onDeleteState(countryName);
   };

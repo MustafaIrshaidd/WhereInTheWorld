@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-import SearchBar from "../../../../Components/forms/SearchBar";
-import DropdownMenu from "../../../../Components/forms/DropdownMenu";
+import SearchBar from "../../../../components/forms/SearchBar";
+import DropdownMenu from "../../../../components/forms/DropdownMenu";
 
 const FlagsFilter = ({ onFilterChange }) => {
-
   // Constant Values for dropDownMenu
 
   const dropDownMenuOptions = [

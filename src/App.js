@@ -7,8 +7,8 @@ import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/Home";
 import CountryDetailsPage from "./pages/CountryDetails";
-import NotFound from "./Components/NotFound";
-import Navbar from "./Components/Navbar";
+import NotFound from "./components/NotFound";
+import Navbar from "./components/Navbar";
 
 import CountriesProvider from "./contexts/CountriesContext";
 import LoaderProvider from "./contexts/LoaderContext";

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./styles.module.css";
-import CustomLinkButton from "../../../../Components/forms/CustomLinkButton";
+import CustomLinkButton from "../../../../components/forms/CustomLinkButton";
 import { joinCurrenciesToString } from "../../../../utils/countriesUtils";
 import { joinObjectValuesToString } from "../../../../utils/joinObjectValuesToString";
 import { formatNumber } from "../../../../utils/formatNumber";
-import NotFound from "../../../../Components/NotFound";
+import NotFound from "../../../../components/NotFound";
 
 const CountryDetailsCard = ({ data }) => {
   return (

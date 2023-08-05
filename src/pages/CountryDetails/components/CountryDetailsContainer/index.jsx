@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import BackButton from "../../../../Components/forms/BackButton";
+import BackButton from "../../../../components/forms/BackButton";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
-import CountryDetailsCardLoader from "../../../../Components/loaders/CountryDetailsCardLoader";
+import CountryDetailsCardLoader from "../../../../components/loaders/CountryDetailsCardLoader";
 import { useParams } from "react-router-dom";
 import useFetch from "../../../../hooks/usefetch";
 import CountryDetailsCard from "../CountryDetailsCard";
