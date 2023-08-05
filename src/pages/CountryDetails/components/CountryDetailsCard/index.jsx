@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./styles.module.css";
-import LinkBtn from "../../../../Components/forms/LinkBtn";
-import {
-  formatNum_EN_IN,
-  arrToString,
-  currenciesToString,
-} from "../../../../utils/countriesUtils";
+import CustomLinkButton from "../../../../Components/forms/CustomLinkButton";
+import { joinCurrenciesToString } from "../../../../utils/countriesUtils";
+import { joinObjectValuesToString } from "../../../../utils/joinObjectValuesToString";
+import { formatNumber } from "../../../../utils/formatNumber";
 import NotFound from "../../../../Components/NotFound";
 
 const CountryDetailsCard = ({ data }) => {
@@ -29,7 +27,7 @@ const CountryDetailsCard = ({ data }) => {
           <div className="col">
             <li className="py-2">
               Population:
-              <span> {formatNum_EN_IN(data?.population)}</span>
+              <span> {formatNumber(data?.population, "en-IN")}</span>
             </li>
             <li className="py-2">
               Region:
@@ -41,7 +39,10 @@ const CountryDetailsCard = ({ data }) => {
             </li>
             <li className="py-2">
               Capital:
-              <span> {arrToString(data?.capital) || <NotFound />}</span>
+              <span>
+                {" "}
+                {joinObjectValuesToString(data?.capital, " , ") || <NotFound />}
+              </span>
             </li>
           </div>
           <div className="col-md-6">
@@ -53,12 +54,17 @@ const CountryDetailsCard = ({ data }) => {
               Currencies:{" "}
               <span>
                 {" "}
-                {currenciesToString(data?.currencies) || <NotFound />}
+                {joinCurrenciesToString(data?.currencies, " , ") || <NotFound />}
               </span>
             </li>
             <li className="py-2">
               Languages:
-              <span> {arrToString(data?.languages) || <NotFound />}</span>
+              <span>
+                {" "}
+                {joinObjectValuesToString(data?.languages, " , ") || (
+                  <NotFound />
+                )}
+              </span>
             </li>
           </div>
         </ul>
@@ -70,7 +76,7 @@ const CountryDetailsCard = ({ data }) => {
           <div className="border-countries-links col-md row justify-content-between justify-content-md-start align-items-center p-0 my-4 text-center">
             {typeof data?.borders !== "undefined" ? (
               data.borders.map((border) => (
-                <LinkBtn to="/" title={border} key={border} />
+                <CustomLinkButton to="/" title={border} key={border} />
               ))
             ) : (
               <NotFound />

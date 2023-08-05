@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
-import { formatNum_EN_IN } from "../../../../utils/countriesUtils";
+import { formatNumber } from "../../../../utils/formatNumber";
 
 const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
   const cardRef = useRef(null);
@@ -30,7 +30,7 @@ const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
             <h5 className="card-title">{data.name.common}</h5>
             <ul className="p-0 pt-2">
               <li>
-                Population: <span>{formatNum_EN_IN(data.population)}</span>
+                Population: <span>{formatNumber(data.population,"en-IN")}</span>
               </li>
               <li>
                 Region: <span>{data.region}</span>

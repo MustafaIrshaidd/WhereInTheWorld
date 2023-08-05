@@ -3,7 +3,7 @@ import styles from "./styles.module.css"
 import { Link } from "react-router-dom";
 
 
-const BackBtn = () => {
+const BackButton = () => {
   const handleGoBack = () => {
     window.history.back();
   };
@@ -21,4 +21,4 @@ const BackBtn = () => {
   );
 };
 
-export default BackBtn;
+export default BackButton;
