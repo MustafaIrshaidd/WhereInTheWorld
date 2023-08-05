@@ -3,24 +3,15 @@ import React, { useContext } from "react";
 import BackButton from "../../../../components/forms/BackButton";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
 import CountryDetailsCardLoader from "../../../../components/loaders/CountryDetailsCardLoader";
-import { useParams } from "react-router-dom";
-import useFetch from "../../../../hooks/usefetch";
 import CountryDetailsCard from "../CountryDetailsCard";
+import { CountryDetailsContext } from "../../../../contexts/CountryDetailsContext";
 
 const CountryDetailsContainer = () => {
   // isLoading Context
-  const { isLoading, stopLoader, startLoader } = useContext(LoaderContext);
+  const { isLoading } = useContext(LoaderContext);
 
-  // get CountryName from params
-  const { countryName } = useParams();
-
-  // fetching API on countryName
-  const { data, error } = useFetch(
-    `https://restcountries.com/v3.1/name/${countryName}`
-  );
-
-  // if Data arrived stopLoader
-  data ? stopLoader() : startLoader();
+  // using Context to get Countries Details Data
+  const { data } = useContext(CountryDetailsContext);
 
   return (
     <>

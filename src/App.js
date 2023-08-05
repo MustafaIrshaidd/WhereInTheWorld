@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
 
 import CountriesProvider from "./contexts/CountriesContext";
+import CountryDetailsProvider from "./contexts/CountryDetailsContext";
 import LoaderProvider from "./contexts/LoaderContext";
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
       <Routes>
         <Route element={<CountriesProvider />}>
           <Route path="" element={<HomePage />}></Route>
+        </Route>
+        <Route element={<CountryDetailsProvider />}>
           <Route
             path="/flag-details/:countryName"
             element={<CountryDetailsPage />}></Route>
