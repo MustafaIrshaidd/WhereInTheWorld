@@ -47,16 +47,12 @@ const FavCountriesContainer = () => {
 
   // Delete favCountry From Local Storage
 
-  const extractFromLocalStorage = (ev) => {
-    const countryName = ev.target
-      .closest(".flag-content")
-      .querySelector("h5").innerHTML;
-
-    const updatedObj = Object.fromEntries(
-      Object.entries(favoriteFlags).filter(([key]) => key !== countryName)
-    );
-    setFavoriteFlags(updatedObj);
+  const deleteFavCountryFromLocalStorage = (countryName) => {
+    const updatedFavoriteFlags = { ...favoriteFlags };
+    delete updatedFavoriteFlags[countryName];
+    setFavoriteFlags(updatedFavoriteFlags);
   };
+
   return (
     <>
       <section
@@ -73,7 +69,9 @@ const FavCountriesContainer = () => {
                 key={flagTitle}
                 imgSrc={favoriteFlags[flagTitle].imgSrc}
                 countryName={flagTitle}
-                deleteMe={extractFromLocalStorage}
+                onDeleteState={(countryName) =>
+                  deleteFavCountryFromLocalStorage(countryName)
+                }
               />
             ))}
           </div>
