@@ -7,8 +7,9 @@ import { LoaderContext } from "../../../../contexts/LoaderContext";
 import { filterCountriesData } from "../../../../utils/countriesUtils";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import NotFound from "../../../../components/NotFound";
+import { CountriesFilterContext } from "../../../../contexts/CountriesFilterContext";
 
-const CountriesCardsContainer = ({ filterBy }) => {
+const CountriesCardsContainer = () => {
   // LocalStorage Custom Hook
   const [favoriteFlags] = useLocalStorage("favouriteFlags");
 
@@ -17,6 +18,9 @@ const CountriesCardsContainer = ({ filterBy }) => {
 
   // is Loading Context
   const { isLoading } = useContext(LoaderContext);
+
+  // CountriesFilterContext
+  const { filterBy } = useContext(CountriesFilterContext);
 
   // splitting filterBy props
   const { filterType, searchQuery } = filterBy;

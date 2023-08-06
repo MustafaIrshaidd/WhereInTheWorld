@@ -11,13 +11,11 @@ const CountryDetailsProvider = ({ children }) => {
   // get countryName from params
   const { countryName } = useParams();
 
-  const {data, error} = useFetch(
+  const { data, error } = useFetch(
     `https://restcountries.com/v3.1/name/${countryName}`
   );
 
   data ? stopLoader() : startLoader();
-
-  
 
   return (
     <CountryDetailsContext.Provider value={{ data, error }}>

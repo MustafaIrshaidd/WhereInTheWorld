@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
 
 import SearchBar from "../../../../components/forms/SearchBar";
 import DropdownMenu from "../../../../components/forms/DropdownMenu";
+import { CountriesFilterContext } from "../../../../contexts/CountriesFilterContext";
 
-const FlagsFilter = ({ onFilterChange }) => {
+const FlagsFilter = () => {
+  // send Filter Values to Context
+  const { setFilterBy } = useContext(CountriesFilterContext);
+
   // Constant Values for dropDownMenu
+
+  const onFilterChange = (key, value) => {
+    setFilterBy((prevState) => ({ ...prevState, [key]: value }));
+  };
 
   const dropDownMenuOptions = [
     "Favourites",

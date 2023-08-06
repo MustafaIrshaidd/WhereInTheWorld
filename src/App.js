@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
 
 import CountriesProvider from "./contexts/CountriesContext";
+import CountriesFilterProvider from "./contexts/CountriesFilterContext";
 import CountryDetailsProvider from "./contexts/CountryDetailsContext";
 import LoaderProvider from "./contexts/LoaderContext";
 
@@ -20,7 +21,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route element={<CountriesProvider />}>
-          <Route path="" element={<HomePage />}></Route>
+          <Route element={<CountriesFilterProvider />}>
+            <Route path="" element={<HomePage />}></Route>
+          </Route>
         </Route>
         <Route element={<CountryDetailsProvider />}>
           <Route
