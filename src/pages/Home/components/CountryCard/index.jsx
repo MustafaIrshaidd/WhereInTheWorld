@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { formatNumber } from "../../../../utils/formatNumber";
+import { FavCountriesContext } from "../../../../contexts/FavCountriesContext";
+import {
+  addItemToObject,
+  removeItemFromObject,
+} from "../../../../utils/objectUtils";
 
 const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
+  const { favCountries, setFavCountries } = useContext(FavCountriesContext);
+
+  const isFavouriteHandler = () => {
+    setFavCountries(
+      isFavourite
+        ? removeItemFromObject(favCountries, data.name.common)
+        : addItemToObject(favCountries, data.name.common, { imgSrc: data.flags.svg })
+    );
+  };
+
   const handleDragStart = (ev) => {
     onDragStart(ev);
   };
@@ -48,9 +63,13 @@ const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
               styles["fav-star-visiblity"] +
               " fa-solid fa-star"
             }
+            onClick={isFavouriteHandler}
           />
         ) : (
-          <i className={styles["fav-star-visiblity"] + " fa-solid fa-star"} />
+          <i
+            className={styles["fav-star-visiblity"] + " fa-solid fa-star"}
+            onClick={isFavouriteHandler}
+          />
         )}
       </div>
     </>

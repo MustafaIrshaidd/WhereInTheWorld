@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import CustomLinkButton from "../../../../components/forms/CustomLinkButton";
 import { joinCurrenciesToString } from "../../../../utils/countriesUtils";
-import { joinObjectValuesToString } from "../../../../utils/joinObjectValuesToString";
+import { joinObjectValuesToString } from "../../../../utils/objectUtils";
 import { formatNumber } from "../../../../utils/formatNumber";
 import NotFound from "../../../../components/NotFound";
 

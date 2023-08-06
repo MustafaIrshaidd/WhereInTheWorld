@@ -4,6 +4,10 @@ import styles from "./styles.module.css";
 import FavCountry from "../FavCountry";
 
 import { FavCountriesContext } from "../../../../contexts/FavCountriesContext";
+import {
+  addItemToObject,
+  removeItemFromObject,
+} from "../../../../utils/objectUtils";
 
 const FavCountriesContainer = () => {
   // setFavouriteCountries in local storage by context
@@ -34,19 +38,15 @@ const FavCountriesContainer = () => {
     }
 
     // Update the state with the new favCountry
-
-    setFavCountries((prevFlags) => ({
-      ...prevFlags,
-      [countryName]: { imgSrc: imgSource },
-    }));
+    setFavCountries(
+      addItemToObject(favCountries, countryName, { imgSrc: imgSource })
+    );
   };
 
   // Delete favCountry From Local Storage
 
   const deleteFavCountryFromLocalStorage = (countryName) => {
-    const updatedFavoriteFlags = { ...favCountries };
-    delete updatedFavoriteFlags[countryName];
-    setFavCountries(updatedFavoriteFlags);
+    setFavCountries(removeItemFromObject(favCountries, countryName));
   };
 
   return (
