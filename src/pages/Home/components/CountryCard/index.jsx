@@ -1,11 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { formatNumber } from "../../../../utils/formatNumber";
 
 const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
-  const cardRef = useRef(null);
-
   const handleDragStart = (ev) => {
     onDragStart(ev);
   };
@@ -18,7 +16,6 @@ const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
           to={`flag-details/${data.name.official}`}
           className={`${styles["card-hover--scale-down"]} card overflow-hidden shadow-sm border-0`}
           draggable="true"
-          ref={cardRef}
           onDragStart={handleDragStart}
           id={data.name.common}>
           <img
@@ -30,7 +27,8 @@ const CountryCard = ({ data, index, isFavourite, onDragStart }) => {
             <h5 className="card-title">{data.name.common}</h5>
             <ul className="p-0 pt-2">
               <li>
-                Population: <span>{formatNumber(data.population,"en-IN")}</span>
+                Population:{" "}
+                <span>{formatNumber(data.population, "en-IN")}</span>
               </li>
               <li>
                 Region: <span>{data.region}</span>

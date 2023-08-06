@@ -1,19 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
 
 import FavCountry from "../FavCountry";
-import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+
+import { FavCountriesContext } from "../../../../contexts/FavCountriesContext";
 
 const FavCountriesContainer = () => {
-  // setFavouriteCountries in local storage as an empty array
-
-  const [favoriteFlags, setFavoriteFlags] = useLocalStorage(
-    "favouriteFlags",
-    {}
-  );
+  // setFavouriteCountries in local storage by context
+  const { favCountries, setFavCountries } = useContext(FavCountriesContext);
 
   // allow drop on FavCountriesContainer
-
   const allowDropOnFavouriteFlags = (ev) => {
     ev.preventDefault();
   };
@@ -30,27 +26,27 @@ const FavCountriesContainer = () => {
 
     // extracting countryName and imgSource from DOM API
 
-    const flagTitle = tempElement.querySelector("h5").innerHTML;
-    const flagSource = tempElement.querySelector("img").getAttribute("src");
+    const countryName = tempElement.querySelector("h5").innerHTML;
+    const imgSource = tempElement.querySelector("img").getAttribute("src");
 
-    if (favoriteFlags.hasOwnProperty(flagTitle)) {
+    if (favCountries.hasOwnProperty(countryName)) {
       return;
     }
 
     // Update the state with the new favCountry
 
-    setFavoriteFlags((prevFlags) => ({
+    setFavCountries((prevFlags) => ({
       ...prevFlags,
-      [flagTitle]: { imgSrc: flagSource, countryName: flagTitle },
+      [countryName]: { imgSrc: imgSource },
     }));
   };
 
   // Delete favCountry From Local Storage
 
   const deleteFavCountryFromLocalStorage = (countryName) => {
-    const updatedFavoriteFlags = { ...favoriteFlags };
+    const updatedFavoriteFlags = { ...favCountries };
     delete updatedFavoriteFlags[countryName];
-    setFavoriteFlags(updatedFavoriteFlags);
+    setFavCountries(updatedFavoriteFlags);
   };
 
   return (
@@ -64,16 +60,17 @@ const FavCountriesContainer = () => {
             id="favContent"
             onDrop={dropOnFavouriteFlags}
             onDragOver={allowDropOnFavouriteFlags}>
-            {Object.keys(favoriteFlags).map((flagTitle) => (
-              <FavCountry
-                key={flagTitle}
-                imgSrc={favoriteFlags[flagTitle].imgSrc}
-                countryName={flagTitle}
-                onDeleteState={(countryName) =>
-                  deleteFavCountryFromLocalStorage(countryName)
-                }
-              />
-            ))}
+            {favCountries &&
+              Object.keys(favCountries).map((countryName) => (
+                <FavCountry
+                  key={countryName}
+                  imgSrc={favCountries[countryName].imgSrc}
+                  countryName={countryName}
+                  onDeleteState={(countryName) =>
+                    deleteFavCountryFromLocalStorage(countryName)
+                  }
+                />
+              ))}
           </div>
         </div>
       </section>

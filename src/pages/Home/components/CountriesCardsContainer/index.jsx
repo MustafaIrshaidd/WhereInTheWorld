@@ -5,13 +5,13 @@ import CountryCard from "../CountryCard";
 import { CountriesContext } from "../../../../contexts/CountriesContext";
 import { LoaderContext } from "../../../../contexts/LoaderContext";
 import { filterCountriesData } from "../../../../utils/countriesUtils";
-import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import NotFound from "../../../../components/NotFound";
 import { CountriesFilterContext } from "../../../../contexts/CountriesFilterContext";
+import { FavCountriesContext } from "../../../../contexts/FavCountriesContext";
 
 const CountriesCardsContainer = () => {
   // LocalStorage Custom Hook
-  const [favoriteFlags] = useLocalStorage("favouriteFlags");
+  const {favCountries} = useContext(FavCountriesContext) 
 
   // Countries data Context
   const { data } = useContext(CountriesContext);
@@ -30,7 +30,7 @@ const CountriesCardsContainer = () => {
     filterType,
     searchQuery,
     data,
-    favoriteFlags
+    favCountries
   );
 
   // Function to render CountryCardLoader components
@@ -65,7 +65,7 @@ const CountriesCardsContainer = () => {
               <CountryCard
                 data={flag}
                 index={index}
-                isFavourite={favoriteFlags?.hasOwnProperty(flag.name.common)}
+                isFavourite={favCountries?.hasOwnProperty(flag.name.common)}
                 draggable
                 onDragStart={dragFromFlagsCards}
               />

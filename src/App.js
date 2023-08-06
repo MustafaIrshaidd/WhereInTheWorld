@@ -14,21 +14,24 @@ import CountriesProvider from "./contexts/CountriesContext";
 import CountriesFilterProvider from "./contexts/CountriesFilterContext";
 import CountryDetailsProvider from "./contexts/CountryDetailsContext";
 import LoaderProvider from "./contexts/LoaderContext";
+import FavCountriesProvider from "./contexts/FavCountriesContext";
 
 function App() {
   return (
     <LoaderProvider>
       <Navbar />
       <Routes>
-        <Route element={<CountriesProvider />}>
-          <Route element={<CountriesFilterProvider />}>
-            <Route path="" element={<HomePage />}></Route>
+        <Route element={<FavCountriesProvider />}>
+          <Route element={<CountriesProvider />}>
+            <Route element={<CountriesFilterProvider />}>
+              <Route path="" element={<HomePage />}></Route>
+            </Route>
           </Route>
-        </Route>
-        <Route element={<CountryDetailsProvider />}>
-          <Route
-            path="/flag-details/:countryName"
-            element={<CountryDetailsPage />}></Route>
+          <Route element={<CountryDetailsProvider />}>
+            <Route
+              path="/flag-details/:countryName"
+              element={<CountryDetailsPage />}></Route>
+          </Route>
         </Route>
         <Route
           path="*"
