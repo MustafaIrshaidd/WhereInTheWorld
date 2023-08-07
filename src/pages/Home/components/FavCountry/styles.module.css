@@ -1,0 +1,35 @@
+.flag-content {
+    transition: background-color 0.2s;
+}
+
+.flag-content:hover {
+    cursor: pointer;
+    background-color: var(--bg-WallPaperGrey);
+}
+
+.delete-btn {
+    background-color: var(--bg-WallPaperGrey);
+    color: var(--color-LoyalBlue);
+    width: 25px;
+    height: 25px;
+    transition: transform 0.5s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.4);
+}
+
+.delete-btn::after {
+    content: '\f00d';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.favImg{
+    height:35px !important;
+    width:53px !important;
+}

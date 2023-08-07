@@ -1,0 +1,35 @@
+/* SearchBar */
+
+.search-input i {
+    position: absolute;
+    color: var(--color-DarkCoolGrey-info);
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.search-input input::placeholder {
+    color: var(--color-DarkCoolGrey-info);
+    font-family: sans-serif;
+}
+
+.search-input input[type="search"]:focus~i::after {
+    color: transparent;
+}
+
+.search-input {
+    margin: 1.5rem 0rem;
+    min-width: 37%;
+}
+
+.search-input input[type="search"] {
+    position: relative;
+    z-index: 0;
+    min-height: 3rem;
+    border-color: transparent;
+    border-radius: 7px;
+    background-color: var(--bg-White-element);
+}

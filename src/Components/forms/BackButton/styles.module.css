@@ -1,0 +1,26 @@
+.back-button {
+  color: var(--color-DarkCoolGrey-info);
+  background-color: var(--bg-White-element);
+  font-size: 12px;
+  transition: box-shadow 0.3s;
+}
+
+.back-button:hover {
+  box-shadow: transparent 0 0 0 !important;
+}
+
+.back-button::before {
+  content: "\f177";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s;
+}
+
+.back-button:hover::before {
+  left: 25%;
+  box-shadow: transparent 0 0 0 !important;
+}

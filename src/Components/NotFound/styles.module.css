@@ -1,0 +1,24 @@
+.notfound{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh);
+    color:var(--color-loyalBlue);
+    background-color: var(--bg-WallPaperGrey);
+    position: relative;
+}
+
+.notfound p{
+    position: relative;
+}
+.notfound::after{
+    content: '\f3eb';
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 100px;
+    font-weight: 500;
+    font-family: 'FontAwesome';
+    color: var(--color-LoyalBlue);
+}
