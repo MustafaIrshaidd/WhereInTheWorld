@@ -24,12 +24,12 @@ function App() {
         <Route element={<FavCountriesProvider />}>
           <Route element={<CountriesProvider />}>
             <Route element={<CountriesFilterProvider />}>
-              <Route path="" element={<HomePage />}></Route>
+              <Route path="/WhereInTheWorld" element={<HomePage />}></Route>
             </Route>
           </Route>
           <Route element={<CountryDetailsProvider />}>
             <Route
-              path="/flag-details/:countryName"
+              path="WhereInTheWorld/flag-details/:countryName"
               element={<CountryDetailsPage />}></Route>
           </Route>
         </Route>
