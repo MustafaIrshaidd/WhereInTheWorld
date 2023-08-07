@@ -9,12 +9,11 @@ const FlagsFilter = () => {
   // send Filter Values to Context
   const { setFilterBy } = useContext(CountriesFilterContext);
 
-  // Constant Values for dropDownMenu
-
   const onFilterChange = (key, value) => {
     setFilterBy((prevState) => ({ ...prevState, [key]: value }));
   };
 
+  // Constant Values for dropDownMenu
   const dropDownMenuOptions = [
     "Favourites",
     "Africa",
