@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/WhereInTheWorld/static/css/main.16c0edb2.css",
-    "main.js": "/WhereInTheWorld/static/js/main.eebf520d.js",
+    "main.js": "/WhereInTheWorld/static/js/main.6b80bc00.js",
     "static/js/787.7a48be1b.chunk.js": "/WhereInTheWorld/static/js/787.7a48be1b.chunk.js",
     "static/media/fa-solid-900.ttf": "/WhereInTheWorld/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/fa-brands-400.ttf": "/WhereInTheWorld/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
@@ -13,11 +13,11 @@
     "static/media/fa-v4compatibility.woff2": "/WhereInTheWorld/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "index.html": "/WhereInTheWorld/index.html",
     "main.16c0edb2.css.map": "/WhereInTheWorld/static/css/main.16c0edb2.css.map",
-    "main.eebf520d.js.map": "/WhereInTheWorld/static/js/main.eebf520d.js.map",
+    "main.6b80bc00.js.map": "/WhereInTheWorld/static/js/main.6b80bc00.js.map",
     "787.7a48be1b.chunk.js.map": "/WhereInTheWorld/static/js/787.7a48be1b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.16c0edb2.css",
-    "static/js/main.eebf520d.js"
+    "static/js/main.6b80bc00.js"
   ]
 }
