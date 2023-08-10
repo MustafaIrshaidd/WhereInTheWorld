@@ -30,7 +30,7 @@ function App() {
         </Route>
         <Route element={<CountryDetailsProvider />}>
           <Route
-            path="WhereInTheWorld/flag-details/:countryName"
+            path="/WhereInTheWorld/flag-details/:countryName"
             element={<CountryDetailsPage />}></Route>
         </Route>
         <Route

@@ -14,7 +14,7 @@ export const addItemToObject = (object, key, value) => {
 
 // Function to remove an item from the object
 export const removeItemFromObject = (object, key) => {
-  const updatedObject = {...object}
+  const updatedObject = { ...object };
   delete updatedObject[key];
   return updatedObject;
 };
