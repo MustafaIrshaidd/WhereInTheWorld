@@ -27,11 +27,11 @@ function App() {
               <Route path="/WhereInTheWorld" element={<HomePage />}></Route>
             </Route>
           </Route>
-          <Route element={<CountryDetailsProvider />}>
-            <Route
-              path="WhereInTheWorld/flag-details/:countryName"
-              element={<CountryDetailsPage />}></Route>
-          </Route>
+        </Route>
+        <Route element={<CountryDetailsProvider />}>
+          <Route
+            path="WhereInTheWorld/flag-details/:countryName"
+            element={<CountryDetailsPage />}></Route>
         </Route>
         <Route
           path="*"
